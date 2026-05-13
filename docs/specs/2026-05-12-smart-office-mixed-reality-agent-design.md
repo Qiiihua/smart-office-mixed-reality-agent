@@ -112,9 +112,10 @@ The agent continuously perceives both physical and digital state, maintains a un
 │  │ Camera frame →   │  │ Web → Page       │  │  UIA Tree +      │  │
 │  │ {person, device} │  │ Affordance Model │  │  OmniParser V1   │  │
 │  └────────┬─────────┘  └────────┬─────────┘  └────────┬─────────┘  │
-│           └────────────────┬────┘                      │            │
-│                            │         ┌──────────────────┘            │
-│  ┌─────────────────────────▼────────────────────────────────────┐   │
+│           │                    │                    │            │
+│           └────────────────────┼────────────────────┘            │
+│                                ▼                                  │
+│  ┌─────────────────────────────────────────────────────────────┐   │
 │  │  WoT Affordance Parser  (Gidey 2025 + WoT TD 2.0)           │   │
 │  │  Thing Descriptions → {Properties, Actions, Events} catalog  │   │
 │  │  WoT Events → async physical interrupt signals               │   │
