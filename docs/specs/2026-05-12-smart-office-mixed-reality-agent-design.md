@@ -19,7 +19,7 @@ Similarly, affordance-based world models (Gidey et al., 2025) construct a **Cogn
 
 Three concrete research gaps motivate this project:
 
-1. **Physical blindness of CUAs** — identified as a key gap by Sager et al. (2026): *"disconnect between research and practical conditions."* Real office environments include presence, temperature, CO₂, and lighting — none of which enter the agent's world model today.
+1. **Physical blindness of CUAs** — Sager et al. (2026) identify a *"mismatch between the assumptions regarding ACUs and their operational environments made during research and the actual conditions encountered during real-world deployment."* Real office environments include presence, temperature, CO₂, and lighting — none of which enter the agent's world model today, representing an instance of this broader deployment gap.
 
 2. **No physical-digital world model fusion** — Agentic World Modeling (Chu et al., 2025) treats physical and digital world models as separate research tracks (L2 Simulator: Physical World vs. Digital World) with no fusion framework.
 
