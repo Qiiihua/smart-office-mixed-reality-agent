@@ -103,25 +103,31 @@ The agent continuously perceives both physical and digital state, maintains a un
 ### 3.1 Layer Overview
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        PERCEPTION LAYER                              │
-│                                                                      │
-│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐  │
-│  │ Physical Scene   │  │  DOM Transducer  │  │  Hybrid Desktop  │  │
-│  │ Parser [NEW]     │  │ (Gidey 2025)     │  │  Detector (UFO2) │  │
-│  │ Camera frame →   │  │ Web → Page       │  │  UIA Tree +      │  │
-│  │ {person, device} │  │ Affordance Model │  │  OmniParser V1   │  │
-│  └────────┬─────────┘  └────────┬─────────┘  └────────┬─────────┘  │
-│           │                    │                    │            │
-│           └────────────────────┼────────────────────┘            │
-│                                ▼                                  │
-│  ┌─────────────────────────────────────────────────────────────┐   │
-│  │  WoT Affordance Parser  (Gidey 2025 + WoT TD 2.0)           │   │
-│  │  Thing Descriptions → {Properties, Actions, Events} catalog  │   │
-│  │  WoT Events → async physical interrupt signals               │   │
-│  └──────────────────────────────┬───────────────────────────────┘   │
-└─────────────────────────────────│───────────────────────────────────┘
-                                  ▼
+┌──────────────────────────────────────────────────────────────────────┐
+│                         PERCEPTION LAYER                              │
+│                                                                       │
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐   │
+│  │ Physical Scene   │  │  DOM Transducer  │  │  Hybrid Desktop  │   │
+│  │ Parser [NEW]     │  │ (Gidey 2025)     │  │  Detector (UFO2) │   │
+│  │ Camera frame →   │  │ Web → Page       │  │  UIA Tree +      │   │
+│  │ {person, device} │  │ Affordance Model │  │  OmniParser V1   │   │
+│  └────────┬─────────┘  └────────┬─────────┘  └────────┬─────────┘   │
+│           │                     │                      │             │
+│           ▼                     │                      │             │
+│  ┌──────────────────────────┐   │                      │             │
+│  │  WoT Affordance Parser   │   │                      │             │
+│  │  (Gidey 2025 + WoT TD2.0)│   │                      │             │
+│  │  TD→{Prop, Action, Event}│   │                      │             │
+│  │  WoT Events→async signals│   │                      │             │
+│  └──────────────┬───────────┘   │                      │             │
+│                 └───────────────┴──────────────────────┘             │
+│                                 ▼                                     │
+│  ┌────────────────────────────────────────────────────────────────┐  │
+│  │  Unified Affordance Catalog                                    │  │
+│  │  {Physical, Web, Desktop} → single queryable affordance space  │  │
+│  └────────────────────────────────┬───────────────────────────────┘  │
+└───────────────────────────────────│──────────────────────────────────┘
+                                    ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │                 MIXED-REALITY COGNITIVE MAP                          │
 │         (extends Gidey 2025 Cognitive Map + UFO2 Blackboard)        │
