@@ -344,12 +344,12 @@ A rule-based system (traditional smart office automation): hardcoded `if presenc
 
 | Metric | Description | Target |
 |--------|-------------|--------|
-| **Task Completion Rate** | % of cross-reality task chains fully completed correctly | > 80% |
-| **Cross-Reality Coordination Accuracy** | Physical and digital actions correctly aligned (e.g., temperature strategy matches calendar) | > 75% |
-| **Reflex Latency** | Time from WoT Event push to physical action executed | < 500ms |
-| **Supervisor Latency** | Time from ambiguous trigger to full Task DAG executed | < 15s |
-| **Affordance Discovery Time** | New WoT device added → agent integrates without code change | < 30s |
-| **Non-disruption** | % of digital tasks executed in PiP without visible interruption | 100% |
+| **Task Completion Rate** | % of cross-reality task chains fully completed correctly (standard agent benchmark metric \[ufo2, cuAgentsSurvey2026\]) | > 80% |
+| **Cross-Reality Coordination Accuracy** | Physical and digital actions correctly aligned (e.g., temperature strategy matches calendar) \[icsa2026Gidey\] | > 75% |
+| **Reflex Latency** | Time from WoT Event push to physical action executed; reflex rule target < 50 ms \[icsa2026Gidey\] | < 500ms |
+| **Supervisor Latency** | Time from ambiguous trigger to full Task DAG executed \[ufo2, ufo3\] | < 15s |
+| **Affordance Discovery Time** | New WoT device added → agent integrates without code change via dynamic TD discovery \[WoTTD2\] | < 30s |
+| **Non-disruption** | % of digital tasks executed in PiP without visible interruption \[ufo2\] | 100% |
 
 ### 7.3 Test Scenarios
 1. Standard arrival (hot day + morning meeting)
