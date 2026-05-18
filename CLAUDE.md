@@ -191,8 +191,8 @@ python -m src.main --mock
 | T1 | `src/config.py` | ✅ Done | P2 |
 | T2 | `src/cognitive_map/nodes.py` + tests | ✅ Done | P2 |
 | T3 | `src/cognitive_map/event_bus.py` + tests | ✅ Done | P2 |
-| T4 | `src/cognitive_map/cognitive_map.py` + tests | ⏳ In progress | P2 |
-| T5 | `simulation/wot/*.js` + `simulation/mock_camera.py` | ⏳ Pending | P1 |
+| T4 | `src/cognitive_map/cognitive_map.py` + tests | ✅ Done | — |
+| T5 | `simulation/wot/*.js` + `simulation/mock_camera.py` | ✅ Done | — |
 | T6 | `src/perception/wot_affordance_parser.py` + tests | ⏳ Pending | P1 |
 | T7 | `src/perception/physical_scene_parser.py` + tests | ⏳ Pending | P1 |
 | T8 | `src/supervisor/task_dag.py` + tests | ⏳ Pending | P2 |
