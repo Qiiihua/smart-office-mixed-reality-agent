@@ -80,7 +80,94 @@ Agent Execution Layer
 
 ## Getting Started
 
-> Implementation in progress. See [`docs/specs/`](docs/specs/) for the full design specification.
+### Prerequisites
+
+- [Anaconda](https://www.anaconda.com/download) or Miniconda
+- Python 3.11
+- Node.js ≥ 18 (for WoT device simulation)
+
+### 1. Create the Python environment
+
+```bash
+conda create -n smart-office python=3.11 -y
+conda activate smart-office
+```
+
+### 2. Install Python dependencies
+
+```bash
+pip install aiohttp anthropic pytest pytest-asyncio
+```
+
+> `ultralytics` and `opencv-python` (listed in `requirements.txt`) are only needed
+> for real camera mode. Skip them during development — mock mode works without them.
+
+### 3. Install Node-WoT simulation dependencies
+
+```bash
+cd simulation/wot
+npm install
+cd ../..
+```
+
+### 4. Set environment variables
+
+```bash
+export ANTHROPIC_API_KEY="your-key-here"   # required for LLM Supervisor
+# Optional overrides (defaults shown):
+export WOT_BASE_URL="http://localhost"
+export CAMERA_INDEX="-1"                   # -1 = mock mode, no real camera
+```
+
+---
+
+### Running the tests
+
+```bash
+# Activate the environment first
+conda activate smart-office
+
+# Run all unit tests
+python -m pytest tests/ --ignore=tests/integration --ignore=tests/evaluation -v
+
+# Run a single test file
+python -m pytest tests/test_nodes.py -v
+```
+
+### Running the agent (mock mode)
+
+Start the WoT device simulators in one terminal:
+
+```bash
+conda activate smart-office
+cd simulation/wot
+node thermostat.js & node lights.js & node co2_sensor.js & node ventilation.js &
+```
+
+Run the agent in another terminal:
+
+```bash
+conda activate smart-office
+python -m src.main --mock
+```
+
+### Running integration tests
+
+Requires the WoT simulators to be running (see above).
+
+```bash
+python -m pytest tests/integration/ -v -m integration
+```
+
+### Running the evaluation baseline
+
+```bash
+python -m tests.evaluation.runner
+```
+
+---
+
+> Full design specification: [`docs/specs/`](docs/specs/)
 
 ---
 
