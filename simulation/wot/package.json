@@ -1,0 +1,16 @@
+{
+  "name": "smart-office-wot-simulation",
+  "version": "1.0.0",
+  "description": "Simulated W3C WoT devices for Smart Office Agent development and testing",
+  "scripts": {
+    "thermostat": "node thermostat.js",
+    "lights": "node lights.js",
+    "co2": "node co2_sensor.js",
+    "ventilation": "node ventilation.js",
+    "all": "node thermostat.js & node lights.js & node co2_sensor.js & node ventilation.js"
+  },
+  "dependencies": {
+    "@node-wot/binding-http": "^0.9.0",
+    "@node-wot/core": "^0.9.0"
+  }
+}

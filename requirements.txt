@@ -1,0 +1,15 @@
+# HTTP client for WoT Thing Description fetching and action invocation
+aiohttp>=3.9.0
+
+# Anthropic Claude API client (LLM Supervisor)
+anthropic>=0.28.0
+
+# YOLOv8 object detection (Physical Scene Parser — real mode)
+ultralytics>=8.2.0
+
+# OpenCV for camera capture (Physical Scene Parser — real mode)
+opencv-python>=4.9.0
+
+# Testing framework
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
